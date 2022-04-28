@@ -39,6 +39,14 @@ class TodoCollection {
             }
         });
     }
+    getItemCounts() {
+        return {
+            // 전체 todo
+            total: this.itemMap.size,
+            // 완료되지 않은 todo
+            inComplete: this.getTodoItems(false).length,
+        };
+    }
     markComplete(id, complete) {
         const todoItem = this.getTodoById(id);
         if (todoItem) {

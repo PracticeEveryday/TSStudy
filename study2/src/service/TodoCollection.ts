@@ -1,5 +1,5 @@
 import TodoItem from "../model/TodoItem";
-
+import { itemCounts } from "../model/itemCounts";
 class TodoCollection {
   private nextId: number = 1;
   // Map<number, TodoItem> => Generic 이라는 건데 키(구분 할 수 있는)값과 실제 저장할 객체 키값은 id가 될것!
@@ -40,6 +40,15 @@ class TodoCollection {
         this.itemMap.delete(item.id);
       }
     });
+  }
+
+  getItemCounts(): itemCounts {
+    return {
+      // 전체 todo
+      total: this.itemMap.size,
+      // 완료되지 않은 todo
+      inComplete: this.getTodoItems(false).length,
+    };
   }
 
   markComplete(id: number, complete: boolean): void {

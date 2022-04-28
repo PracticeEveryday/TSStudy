@@ -3,19 +3,6 @@ var __importDefault = (this && this.__importDefault) || function (mod) {
     return (mod && mod.__esModule) ? mod : { "default": mod };
 };
 Object.defineProperty(exports, "__esModule", { value: true });
-const TodoItem_1 = __importDefault(require("./model/TodoItem"));
-const data_1 = require("./data");
-const TodoCollection_1 = __importDefault(require("./service/TodoCollection"));
-const sampleTodos = data_1.data.map((item) => new TodoItem_1.default(item.id, item.task, item.complete));
-const myTodoCollection = new TodoCollection_1.default("My Todo List", sampleTodos);
-myTodoCollection.addTodo("JavaScript 학습하기");
-myTodoCollection.addTodo("친구 만나기");
-myTodoCollection.markComplete(3, true);
-console.log(myTodoCollection.userNmae);
-// 전체 뽑기
-myTodoCollection.getTodoItems(true).forEach((item) => item.printDetails());
-console.log("--------------------------------");
-myTodoCollection.getTodoItems(false).forEach((item) => item.printDetails());
-console.log("--------------------------------");
-myTodoCollection.removeComplete();
-myTodoCollection.getTodoItems(true).forEach((item) => item.printDetails());
+const todoConsole_1 = __importDefault(require("./view/todoConsole"));
+const todoConsole = new todoConsole_1.default();
+todoConsole.promptUser();

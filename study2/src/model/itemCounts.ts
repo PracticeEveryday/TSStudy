@@ -1,4 +1,4 @@
-export type ItemCounts = {
+export type itemCounts = {
   total: number;
   inComplete: number;
 };
