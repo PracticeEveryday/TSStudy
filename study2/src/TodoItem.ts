@@ -19,7 +19,8 @@ class TodoItem {
   constructor(
     public id: number,
     public task: string,
-    public complete: boolean
+    // default = false
+    public complete: boolean = false
   ) {
     this.id = id;
     this.task = task;

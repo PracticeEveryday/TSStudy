@@ -1,14 +1,17 @@
 import TodoItem from "./TodoItem";
+import { data } from "./data";
+import TodoCollection from "./TodoCollection";
 
-// type 추론
-const data = [
-  { id: 1, task: "장보기", complete: true },
-  { id: 2, task: "TS 학습하기", complete: false },
-];
+const sampleTodos: TodoItem[] = data.map(
+  (item) => new TodoItem(item.id, item.task, item.complete)
+);
 
-console.log("My Todo List");
+const myTodoCollection = new TodoCollection("My Todo List", sampleTodos);
+myTodoCollection.addTodo("JavaScript 학습하기");
+myTodoCollection.addTodo("친구 만나기");
+myTodoCollection.markComplete(3, true);
 
-for (let i = 0; i < data.length; i++) {
-  let todoItem = new TodoItem(data[i].id, data[i].task, data[i].complete);
-  todoItem.printDetails();
-}
+console.log(myTodoCollection.userNmae);
+myTodoCollection.todoItems.forEach((item) => {
+  item.printDetails();
+});

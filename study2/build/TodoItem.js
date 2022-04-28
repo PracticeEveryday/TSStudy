@@ -15,7 +15,9 @@ Object.defineProperty(exports, "__esModule", { value: true });
 // 생성자에 직접적으로 접근 지정자를 준다!!
 // 이렇게 주면 프로퍼티로 바로 인식함
 class TodoItem {
-    constructor(id, task, complete) {
+    constructor(id, task, 
+    // default = false
+    complete = false) {
         this.id = id;
         this.task = task;
         this.complete = complete;
