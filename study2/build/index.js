@@ -12,6 +12,10 @@ myTodoCollection.addTodo("JavaScript 학습하기");
 myTodoCollection.addTodo("친구 만나기");
 myTodoCollection.markComplete(3, true);
 console.log(myTodoCollection.userNmae);
-myTodoCollection.todoItems.forEach((item) => {
-    item.printDetails();
-});
+// 전체 뽑기
+myTodoCollection.getTodoItems(true).forEach((item) => item.printDetails());
+console.log("--------------------------------");
+myTodoCollection.getTodoItems(false).forEach((item) => item.printDetails());
+console.log("--------------------------------");
+myTodoCollection.removeComplete();
+myTodoCollection.getTodoItems(true).forEach((item) => item.printDetails());
