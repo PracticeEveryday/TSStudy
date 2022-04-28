@@ -57,7 +57,7 @@ enum test {
   Android,
 }
 
-console.log(Os["Ios"]);
+console.log(test["Ios"]);
 // 문자값도 입력 가능
 enum OS {
   Window = "win",
