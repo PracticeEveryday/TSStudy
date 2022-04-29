@@ -1,0 +1,13 @@
+// https://www.typescriptlang.org/tsconfig
+// 속성 찾는 곳
+{
+  "compilerOptions": {
+    // typescript가 이 프로젝트를 어떻게 이해할까 정의해주는거
+    "allowJs": true,
+    // 자바스크립트 허용
+    "checkJs": true,
+    // @ts-check
+    "noImplicitAny": true
+    // 최소한 any라는 타입을 써야함!!
+  }
+}
