@@ -9,6 +9,8 @@ import * as passport from "passport";
 import * as hpp from "hpp";
 import helmet from "helmet";
 
+import { sequelize } from "./models";
+
 dotenv.config();
 
 import { Request, Response, NextFunction } from "express";
@@ -18,6 +20,16 @@ const app = express();
 const prod: boolean = process.env.NODE_ENV !== "production";
 
 app.set("port", prod ? process.env.PORT : 3000);
+
+//force true 서버 재시작 때마다 테이블 초기화함 중요...
+sequelize
+  .sync({ force: false })
+  .then(() => {
+    console.log("데이터베이스 연결 성공");
+  })
+  .catch((err: Error) => {
+    console.error(err);
+  });
 
 if (prod) {
   app.use(hpp());

@@ -17,7 +17,7 @@ class TodoConsole {
   displayTodoList(): void {
     console.log(
       // 몇 개의 항목을 해야합니다. 해야되는 항목만 나옴
-      `======${this.TodoCollection.userNmae}=======` +
+      `======${this.TodoCollection.userName}=======` +
         `(${this.TodoCollection.getItemCounts().inComplete} items todo)`
     );
     this.TodoCollection.getTodoItems(true).forEach((item) =>

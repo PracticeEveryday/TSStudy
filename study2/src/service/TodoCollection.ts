@@ -6,7 +6,7 @@ class TodoCollection {
   private itemMap: Map<number, TodoItem>;
 
   // todoCollection을 만들 때 todoItems를 전달해 준다면 itemMap에 저장 될 수 있또록 할 수 있음.
-  constructor(public userNmae: string, todoItems: TodoItem[] = []) {
+  constructor(public userName: string, todoItems: TodoItem[] = []) {
     this.itemMap = new Map<number, TodoItem>();
     todoItems.forEach((item) => this.itemMap.set(item.id, item));
   }
