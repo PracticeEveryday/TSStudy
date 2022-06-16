@@ -13,3 +13,10 @@ function sum(a: number, b: number): number {
 function add(): number {
   return 10;
 }
+
+// 함수의 옵셔널 파라미터
+// 특정 파라미터를 선택적으로 쓰고 싶으면 물음표를 쓰면 된다!!!
+function log(a: string, b?: string, c?: string) {}
+
+log("hello world");
+log("hello ts", "abc");
