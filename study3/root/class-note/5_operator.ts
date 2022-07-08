@@ -16,3 +16,40 @@ const logMessage = (value: union): void => {
 
 logMessage("hello");
 logMessage(100);
+
+interface Developer {
+  name: string;
+  skill: string;
+}
+
+interface Person {
+  name: string;
+  age: number;
+}
+
+function askSomeone(someone: Developer | Person) {
+  // 공통 되는 것만 접근 가능!
+  // someone.name;
+  // someone.age;
+  // someone.skill;
+}
+askSomeone({ name: "kim", age: 10 });
+askSomeone({
+  name: "lee",
+  skill: "js",
+});
+// & intersection Type
+let kim: string & number & boolean;
+
+function askSomeone2(someone: Developer & Person) {
+  // 모두 접근 가능
+  someone.name;
+  someone.age;
+  someone.skill;
+}
+// developer person type 모두 가지고 있어야 됨
+askSomeone2({
+  name: "lee",
+  age: 100,
+  skill: "js",
+});
