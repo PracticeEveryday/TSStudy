@@ -24,3 +24,11 @@ const lee = { name: "lee" };
 console.log(lee.__proto__);
 admin.__proto__ = seho;
 console.log(admin.name);
+
+// 생성자 함수!
+function Person(name, age) {
+  this.name = name;
+  this.age = age;
+}
+
+var capt = new Person("캡틴", 100);
