@@ -24,7 +24,30 @@ logText2<string>("10");
 // 이렇게 되면 많은 케이스의 함수를 만들어야 한다!!
 // 하지만 logText2의 경우에는 중복되는 것을 방지 할 수 있다.
 
-function logText3(text: string | number) {
+function logText3<T>(text: T): T {
   console.log(text);
   return text;
 }
+
+logText3<string>("a");
+logText3<number>(10);
+
+const str1 = logText3<string>("abc");
+logText3<boolean>(true);
+const login = logText3<boolean>(true);
+
+// 여러개의 함수를 만드는 것이 아니라 타입을 미리 정의해놓고 호출하는 시점에 사용할 수가 있는 것이다!
+// => 추론 후 반환값까지 생각할 수 있다.
+
+// 인터페이스에 제너릭을 선언하는 방법
+interface Dropdown {
+  value: string;
+  selected: boolean;
+}
+const dropdown: Dropdown = { value: 10, selected: false };
+
+interface Dropdown2<T> {
+  value: T;
+  seletecd: boolean;
+}
+const dropdown2: Dropdown2<string> = { value: "abc", seletecd: false };
