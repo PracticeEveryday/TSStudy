@@ -18,3 +18,8 @@
 
 tslint 파일을 만드는 명령
 ./node_modules/.bin/tslint --init
+
+tsc로 타입스크립트 컴파일
+./node_modules/.bin/tsc
+NodeJS로 실행
+node ./dist/index.js
