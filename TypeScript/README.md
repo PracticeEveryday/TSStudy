@@ -15,3 +15,6 @@
 
 1. npm init
 2. npm install --save-dev typescript tslint @types/node
+
+tslint 파일을 만드는 명령
+./node_modules/.bin/tslint --init
