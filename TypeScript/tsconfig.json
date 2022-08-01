@@ -2,7 +2,7 @@
   "compilerOptions": {
     // TSC가 코드 실행 환경에서 이용할 수 있다고 가정하는 API
     //Function.prototype.bind, ES2015의 Object.assign, DOM의 document.querySelector 등
-    "lib": ["ES2015"],
+    "lib": ["ES2020"],
     // TSC가 코드를 컴파일할 대상 모듈 시스템
     "module": "commonjs",
     // 생성된 자바 스크립트 코드를 출력할 디렉터리
