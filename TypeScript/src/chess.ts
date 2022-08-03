@@ -5,7 +5,24 @@ type File = "A" | "B" | "C" | "D" | "E" | "F" | "G" | "H";
 type Rank = 1 | 2 | 3 | 4 | 5 | 6 | 7 | 8;
 
 // 체스 게임
-class Game {}
+class Game {
+  private pieces = Game.makePieces();
+  private static makePieces() {
+    return [
+      // Kings
+      new King("White", "E", 1),
+      new King("Black", "E", 8),
+      // Queens
+      new Queen("White", "D", 1),
+      new Queen("Black", "D", 8),
+      // Bishops
+      new Bishop("White", "C", 1),
+      new Bishop("White", "F", 1),
+      new Bishop("Black", "C", 8),
+      new Bishop("Black", "F", 8),
+    ];
+  }
+}
 
 // 체스 말
 // abstract 키워드는 해당 클래스를 바로 인스턴스화 할수 없음을 의미할 뿐 필요한 매서드를 추상 클래스에서 자유롭게 구현할 수 있다.
